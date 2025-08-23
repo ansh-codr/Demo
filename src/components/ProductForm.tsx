@@ -74,7 +74,7 @@ export default function ProductForm({ onGenerate, isLoading }: ProductFormProps)
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="group-hover:bg-gradient-to-br group-hover:from-orange-50/40 group-hover:to-amber-50/40 transition-all duration-300">
+      <CardContent className="glass-dark group-hover:bg-gradient-to-br group-hover:from-primary/10 group-hover:to-accent/10 group-hover:shadow-glow group-hover:border-primary/40 transition-all duration-500">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
