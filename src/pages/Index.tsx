@@ -164,39 +164,6 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Demo Form */}
-          <div className="max-w-4xl mx-auto">
-            <Card className="glass-panel border-primary/20 shadow-glow">
-              <CardContent className="p-8">
-                <div className="grid lg:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-2xl font-heading font-semibold mb-6">Try It Yourself</h3>
-                    <ProductForm onGenerate={handleGenerate} isLoading={isLoading} />
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-2xl font-heading font-semibold mb-6">Generated Content</h3>
-                    {generatedContent ? (
-                      <GeneratedContent
-                        title={generatedContent.generated_title}
-                        description={generatedContent.generated_description}
-                        features={generatedContent.generated_features_list}
-                      />
-                    ) : (
-                      <Card className="h-full flex items-center justify-center bg-muted/5 border-dashed border-muted/20">
-                        <CardContent className="text-center py-16">
-                          <Sparkles className="h-12 w-12 text-muted-foreground/50 mx-auto mb-4" />
-                          <p className="text-muted-foreground">
-                            Generated content will appear here
-                          </p>
-                        </CardContent>
-                      </Card>
-                    )}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
 
