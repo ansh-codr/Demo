@@ -1,6 +1,7 @@
+
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useRef, useMemo } from 'react';
-import { Mesh, Vector3 } from 'three';
+import { Mesh } from 'three';
 import { Float, Sphere, Box, Torus } from '@react-three/drei';
 
 interface FloatingElementProps {
@@ -21,8 +22,48 @@ const FloatingElement = ({ position, color, size, speed, shape }: FloatingElemen
     }
   });
 
-  const ShapeComponent = shape === 'sphere' ? Sphere : shape === 'box' ? Box : Torus;
-  const args = shape === 'torus' ? [size, size * 0.3, 8, 16] : [size, size, size];
+  const renderShape = () => {
+    switch (shape) {
+      case 'sphere':
+        return (
+          <Sphere ref={meshRef} args={[size, 32, 32]}>
+            <meshStandardMaterial
+              color={color}
+              transparent
+              opacity={0.7}
+              emissive={color}
+              emissiveIntensity={0.2}
+            />
+          </Sphere>
+        );
+      case 'box':
+        return (
+          <Box ref={meshRef} args={[size, size, size]}>
+            <meshStandardMaterial
+              color={color}
+              transparent
+              opacity={0.7}
+              emissive={color}
+              emissiveIntensity={0.2}
+            />
+          </Box>
+        );
+      case 'torus':
+        return (
+          <Torus ref={meshRef} args={[size, size * 0.3, 8, 16]}>
+            <meshStandardMaterial
+              color={color}
+              transparent
+              opacity={0.7}
+              emissive={color}
+              emissiveIntensity={0.2}
+            />
+          </Torus>
+        );
+      default:
+        return null;
+    }
+  };
 
   return (
     <Float
@@ -31,15 +72,7 @@ const FloatingElement = ({ position, color, size, speed, shape }: FloatingElemen
       floatIntensity={2}
       position={position}
     >
-      <ShapeComponent ref={meshRef} args={args as any}>
-        <meshStandardMaterial
-          color={color}
-          transparent
-          opacity={0.7}
-          emissive={color}
-          emissiveIntensity={0.2}
-        />
-      </ShapeComponent>
+      {renderShape()}
     </Float>
   );
 };
