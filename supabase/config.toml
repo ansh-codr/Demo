@@ -1,1 +1,16 @@
 project_id = "ydmmtxxwgliwwblwweca"
+
+[functions.generate-content]
+verify_jwt = true
+
+[functions.products]  
+verify_jwt = true
+
+[functions.prompts]
+verify_jwt = false
+
+[functions.dashboard]
+verify_jwt = true
+
+[functions.export]
+verify_jwt = true

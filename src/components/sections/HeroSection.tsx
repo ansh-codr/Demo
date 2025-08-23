@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { RotatingCube } from "@/components/3d/RotatingCube";
 import { FloatingElements } from "@/components/3d/FloatingElements";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, LogIn } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const sampleProducts = [
   { name: "Premium Headphones", category: "Electronics", image: "" },
@@ -11,6 +13,17 @@ const sampleProducts = [
 ];
 
 export const HeroSection = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleStartGenerating = () => {
+    if (user) {
+      navigate('/generate');
+    } else {
+      navigate('/auth');
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -57,21 +70,25 @@ export const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
+                onClick={handleStartGenerating}
                 size="lg" 
                 className="group bg-gradient-primary hover:shadow-neon transition-all duration-500 text-lg px-8 py-4 rounded-xl"
               >
-                Start Generating
+                {user ? 'Start Generating' : 'Get Started'}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="group glass-panel border-primary/30 hover:border-primary/50 text-lg px-8 py-4 rounded-xl"
-              >
-                <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Watch Demo
-              </Button>
+              {!user && (
+                <Button 
+                  onClick={() => navigate('/auth')}
+                  variant="outline" 
+                  size="lg"
+                  className="group glass-panel border-primary/30 hover:border-primary/50 text-lg px-8 py-4 rounded-xl"
+                >
+                  <LogIn className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  Sign In
+                </Button>
+              )}
             </div>
 
             {/* Stats */}
