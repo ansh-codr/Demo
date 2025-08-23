@@ -8,65 +8,65 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark theme base with neon gradients */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 5% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 262 100% 70%;
+    /* Neon color palette */
+    --primary: 217 91% 60%;
+    --primary-foreground: 240 10% 3.9%;
+    --primary-glow: 217 100% 70%;
 
-    --secondary: 250 100% 97%;
-    --secondary-foreground: 262 83% 58%;
+    --secondary: 270 95% 75%;
+    --secondary-foreground: 240 10% 3.9%;
 
-    --muted: 250 100% 97%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 330 81% 60%;
+    --accent-foreground: 240 10% 3.9%;
 
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 262 83% 58%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 217 91% 60%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(242 76% 62%));
-    --gradient-hero: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(242 76% 62%) 50%, hsl(222 87% 67%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(250 100% 99%));
+    /* Futuristic gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(270 95% 75%), hsl(330 81% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(270 95% 75%) 50%, hsl(330 81% 60%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 3.9%), hsl(240 5% 6%));
+    --gradient-glass: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(270 95% 75% / 0.1));
+    --gradient-neon: linear-gradient(90deg, hsl(217 91% 60%), hsl(270 95% 75%), hsl(330 81% 60%), hsl(217 91% 60%));
     
-    --shadow-elegant: 0 10px 30px -10px hsl(262 83% 58% / 0.2);
-    --shadow-glow: 0 0 40px hsl(262 100% 70% / 0.15);
-    --shadow-card: 0 4px 6px -1px hsl(262 83% 58% / 0.1), 0 2px 4px -1px hsl(262 83% 58% / 0.06);
+    /* Enhanced shadows with neon glow */
+    --shadow-elegant: 0 25px 50px -12px hsl(217 91% 60% / 0.25);
+    --shadow-glow: 0 0 60px hsl(217 91% 60% / 0.3), 0 0 100px hsl(270 95% 75% / 0.2);
+    --shadow-card: 0 10px 30px -10px hsl(217 91% 60% / 0.3), 0 4px 6px -2px hsl(270 95% 75% / 0.2);
+    --shadow-neon: 0 0 20px hsl(217 91% 60% / 0.6), 0 0 40px hsl(270 95% 75% / 0.4), 0 0 60px hsl(330 81% 60% / 0.3);
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 240 5% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 240 10% 3.9%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217 91% 60%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -109,6 +109,63 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Custom animations and effects */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-neon {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
