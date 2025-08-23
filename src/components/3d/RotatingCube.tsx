@@ -1,7 +1,7 @@
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useRef, useState } from 'react';
-import { Mesh, TextureLoader } from 'three';
-import { Text, Box } from '@react-three/drei';
+import { useRef, useState, useEffect } from 'react';
+import { Mesh } from 'three';
+import { Box } from '@react-three/drei';
 
 interface CubeProps {
   productData: {
@@ -38,28 +38,6 @@ const ProductCube = ({ productData }: CubeProps) => {
           wireframe={false}
         />
       </Box>
-      
-      <Text
-        position={[0, 3, 0]}
-        fontSize={0.5}
-        color="#ffffff"
-        anchorX="center"
-        anchorY="middle"
-        font="/fonts/helvetiker_regular.typeface.json"
-      >
-        {productData.name}
-      </Text>
-      
-      <Text
-        position={[0, -3, 0]}
-        fontSize={0.3}
-        color="#a855f7"
-        anchorX="center"
-        anchorY="middle"
-        font="/fonts/helvetiker_regular.typeface.json"
-      >
-        {productData.category}
-      </Text>
     </group>
   );
 };
@@ -71,12 +49,12 @@ export const RotatingCube = ({ className, products }: {
   const [currentProduct, setCurrentProduct] = useState(0);
 
   // Cycle through products every 3 seconds
-  useState(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentProduct((prev) => (prev + 1) % products.length);
     }, 3000);
     return () => clearInterval(interval);
-  });
+  }, [products.length]);
 
   return (
     <div className={className}>
