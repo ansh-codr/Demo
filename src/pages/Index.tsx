@@ -102,14 +102,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* SEO Meta Tags */}
-      <head>
-        <title>AI-Powered Product SEO Generator | Transform Product Data Instantly</title>
-        <meta 
-          name="description" 
-          content="Generate SEO-optimized product titles, descriptions, and features with AI. Perfect for e-commerce businesses, students, and product managers." 
-        />
-      </head>
 
       {/* Hero Section */}
       <HeroSection />
@@ -141,7 +133,7 @@ const Index = () => {
           {/* Interactive Demo */}
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {demoProducts.map((product, index) => (
-              <Card key={index} className="group glass-dark border-primary/20 hover:shadow-glow transition-all duration-500 hover:scale-105">
+              <Card key={index} className="group glass-panel border-primary/20 hover:shadow-glow transition-all duration-500 hover:scale-105">
                 <CardContent className="p-6 space-y-4">
                   <div className="aspect-video bg-gradient-primary/10 rounded-lg flex items-center justify-center overflow-hidden">
                     <img 
@@ -174,7 +166,7 @@ const Index = () => {
 
           {/* Demo Form */}
           <div className="max-w-4xl mx-auto">
-            <Card className="glass-dark border-primary/20 shadow-glow">
+            <Card className="glass-panel border-primary/20 shadow-glow">
               <CardContent className="p-8">
                 <div className="grid lg:grid-cols-2 gap-8">
                   <div>
@@ -252,7 +244,7 @@ const Index = () => {
                 >
                   <Badge 
                     variant="outline" 
-                    className="glass-dark border-primary/30 text-lg px-4 py-2 hover:shadow-neon hover:scale-110 transition-all duration-300 cursor-pointer"
+                    className="glass-panel border-primary/30 text-lg px-4 py-2 hover:shadow-neon hover:scale-110 transition-all duration-300 cursor-pointer"
                   >
                     {category}
                   </Badge>
@@ -263,7 +255,7 @@ const Index = () => {
 
           {/* Features Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="glass-dark border-primary/20 text-center">
+            <Card className="glass-panel border-primary/20 text-center">
               <CardContent className="p-6 space-y-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto">
                   <Target className="h-6 w-6 text-primary" />
@@ -275,7 +267,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="glass-dark border-secondary/20 text-center">
+            <Card className="glass-panel border-secondary/20 text-center">
               <CardContent className="p-6 space-y-4">
                 <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto">
                   <TrendingUp className="h-6 w-6 text-secondary" />
@@ -287,7 +279,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="glass-dark border-accent/20 text-center">
+            <Card className="glass-panel border-accent/20 text-center">
               <CardContent className="p-6 space-y-4">
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto">
                   <Users className="h-6 w-6 text-accent" />
@@ -324,7 +316,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="glass-dark border-primary/20 hover:shadow-glow transition-all duration-500 hover:scale-105">
+              <Card key={index} className="glass-panel border-primary/20 hover:shadow-glow transition-all duration-500 hover:scale-105">
                 <CardContent className="p-6 space-y-4">
                   <div className="flex items-center space-x-1">
                     {[...Array(testimonial.rating)].map((_, i) => (

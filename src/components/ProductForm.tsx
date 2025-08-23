@@ -65,16 +65,16 @@ export default function ProductForm({ onGenerate, isLoading }: ProductFormProps)
   };
 
   return (
-    <Card className="shadow-card hover:shadow-elegant transition-all duration-500 hover:scale-[1.02] bg-gradient-to-br from-orange-50/80 to-amber-50/60 border-orange-200/50 hover:border-orange-300/70 hover:from-orange-100/90 hover:to-amber-100/80 backdrop-blur-sm group">
-      <CardHeader className="bg-gradient-to-r from-orange-100/30 to-amber-100/30 group-hover:from-orange-200/40 group-hover:to-amber-200/40 transition-all duration-300">
+    <Card className="glass-panel border-primary/20 hover:shadow-glow transition-all duration-500 hover:scale-[1.02] group">
+      <CardHeader className="bg-gradient-to-r from-primary/5 to-accent/5 group-hover:from-primary/10 group-hover:to-accent/10 transition-all duration-300">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-xl font-semibold text-orange-900 group-hover:text-orange-800 transition-colors">Product Information</CardTitle>
-          <Button variant="outline" size="sm" onClick={loadDemoData} className="border-orange-300 text-orange-700 hover:bg-orange-100 hover:border-orange-400">
+          <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">Product Information</CardTitle>
+          <Button variant="outline" size="sm" onClick={loadDemoData} className="border-primary/30 hover:bg-primary/10 hover:border-primary/40">
             Load Demo
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="glass-dark group-hover:bg-gradient-to-br group-hover:from-primary/10 group-hover:to-accent/10 group-hover:shadow-glow group-hover:border-primary/40 transition-all duration-500">
+      <CardContent className="bg-gradient-to-br from-background/50 to-background/80 backdrop-blur-sm group-hover:from-primary/5 group-hover:to-accent/5 group-hover:shadow-glow group-hover:border-primary/40 transition-all duration-500">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">

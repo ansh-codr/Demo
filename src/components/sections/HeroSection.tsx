@@ -67,7 +67,7 @@ export const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="group glass-dark border-primary/30 hover:border-primary/50 text-lg px-8 py-4 rounded-xl"
+                className="group glass-panel border-primary/30 hover:border-primary/50 text-lg px-8 py-4 rounded-xl"
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Watch Demo

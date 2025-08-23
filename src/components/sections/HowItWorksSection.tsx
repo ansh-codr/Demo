@@ -68,7 +68,7 @@ export const HowItWorksSection = () => {
               return (
                 <div key={step.id} className="relative group">
                   {/* Step Card */}
-                  <Card className={`glass-dark ${step.borderColor} hover:shadow-glow transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2`}>
+                  <Card className={`glass-panel ${step.borderColor} hover:shadow-glow transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2`}>
                     <CardContent className="p-8 text-center space-y-6">
                       {/* Step Number */}
                       <div className="relative">
@@ -111,7 +111,7 @@ export const HowItWorksSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="inline-block p-6 glass-dark rounded-2xl border border-primary/20">
+          <div className="inline-block p-6 glass-panel rounded-2xl border border-primary/20">
             <p className="text-lg text-muted-foreground mb-4">
               Ready to automate your product content generation?
             </p>
