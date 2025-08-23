@@ -6,6 +6,7 @@ import GeneratedContent from '@/components/GeneratedContent';
 import { ContentGenerator } from '@/utils/contentGenerator';
 import { Sparkles, Zap, Target, TrendingUp } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
+import techBackground from '@/assets/tech-background.jpg';
 import { FloatingObjects } from '@/components/3d/FloatingObjects';
 import { ParticleField } from '@/components/3d/ParticleField';
 import { ProductShowcase } from '@/components/3d/ProductShowcase';
@@ -73,10 +74,10 @@ const Index = () => {
           </div>
           
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
-            style={{ backgroundImage: `url(${heroImage})` }}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${techBackground})` }}
           />
-          <div className="relative bg-gradient-hero">
+          <div className="relative bg-black/40">
             <div className="container mx-auto px-4 py-20 md:py-32">
               <div className="text-center max-w-3xl mx-auto relative z-10">
                 <Badge variant="secondary" className="mb-6 text-sm font-medium">
