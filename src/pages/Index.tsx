@@ -196,14 +196,14 @@ const Index = () => {
             
             {categories.map((category, index) => {
               const angle = (index * 360 / categories.length) * (Math.PI / 180);
-              const radius = 140;
+              const radius = 180;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
               
               return (
                 <div
                   key={category}
-                  className="absolute animate-float"
+                  className="absolute animate-float z-10"
                   style={{
                     top: '50%',
                     left: '50%',
@@ -213,7 +213,7 @@ const Index = () => {
                 >
                   <Badge 
                     variant="outline" 
-                    className="glass-panel border-primary/30 text-lg px-4 py-2 hover:shadow-neon hover:scale-110 transition-all duration-300 cursor-pointer"
+                    className="glass-panel border-primary/30 text-base px-3 py-1.5 hover:shadow-neon hover:scale-110 transition-all duration-300 cursor-pointer whitespace-nowrap"
                   >
                     {category}
                   </Badge>
