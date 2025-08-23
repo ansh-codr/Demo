@@ -228,18 +228,20 @@ const Index = () => {
             </div>
             
             {categories.map((category, index) => {
-              const angle = (index * 60) * (Math.PI / 180);
-              const radius = 120;
+              const angle = (index * 360 / categories.length) * (Math.PI / 180);
+              const radius = 140;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
               
               return (
                 <div
                   key={category}
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-float"
+                  className="absolute animate-float"
                   style={{
+                    top: '50%',
+                    left: '50%',
                     transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                    animationDelay: `${index * 0.5}s`
+                    animationDelay: `${index * 0.3}s`
                   }}
                 >
                   <Badge 
