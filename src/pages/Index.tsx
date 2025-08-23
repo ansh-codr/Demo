@@ -60,38 +60,50 @@ const Index = () => {
           <ParticleField className="absolute inset-0 opacity-30" />
           <FloatingObjects className="absolute inset-0 opacity-60" />
           
+          {/* Large Background Title with Reflection */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="text-center">
+              <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-black text-white/5 select-none leading-none tracking-tight bg-gradient-to-b from-white/10 to-transparent bg-clip-text text-transparent backdrop-blur-sm">
+                EcomScribe Pro
+              </h1>
+              <div className="mt-2 text-8xl md:text-9xl lg:text-[12rem] font-black text-white/3 select-none leading-none tracking-tight transform scale-y-[-1] blur-sm opacity-30">
+                EcomScribe Pro
+              </div>
+            </div>
+          </div>
+          
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
             style={{ backgroundImage: `url(${heroImage})` }}
           />
           <div className="relative bg-gradient-hero">
-            <div className="container mx-auto px-4 py-16 md:py-24">
-              <div className="text-center max-w-4xl mx-auto">
-                <Badge variant="secondary" className="mb-4 text-sm font-medium">
+            <div className="container mx-auto px-4 py-20 md:py-32">
+              <div className="text-center max-w-3xl mx-auto relative z-10">
+                <Badge variant="secondary" className="mb-6 text-sm font-medium">
                   <Sparkles className="w-3 h-3 mr-1" />
-                  AI-Powered Content Generation
+                  AI-Powered
                 </Badge>
                 
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                  EcomScribe Pro
-                </h1>
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                  Generate Perfect Product Content
+                </h2>
                 
-                <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-                  Transform raw product data into high-converting, SEO-optimized listings that drive sales and engagement
+                <p className="text-lg md:text-xl text-white/80 mb-10">
+                  Transform raw data into SEO-optimized listings instantly
                 </p>
                 
-                <div className="flex flex-wrap justify-center gap-4 mb-12">
-                  <div className="flex items-center gap-2 text-white/80">
-                    <Zap className="w-5 h-5" />
-                    <span>Instant Generation</span>
+                <div className="flex justify-center gap-8">
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Zap className="w-4 h-4" />
+                    <span className="text-sm">Instant</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/80">
-                    <Target className="w-5 h-5" />
-                    <span>SEO Optimized</span>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Target className="w-4 h-4" />
+                    <span className="text-sm">SEO Ready</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/80">
-                    <TrendingUp className="w-5 h-5" />
-                    <span>High Converting</span>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <TrendingUp className="w-4 h-4" />
+                    <span className="text-sm">High Converting</span>
                   </div>
                 </div>
               </div>
@@ -139,48 +151,41 @@ const Index = () => {
         </main>
 
         {/* Features Section */}
-        <section className="bg-muted/30 py-16">
+        <section className="bg-muted/20 py-12">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Why Choose EcomScribe Pro?</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Built specifically for e-commerce success with AI-powered optimization
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <article className="text-center relative">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 relative overflow-hidden">
-                  <Target className="w-8 h-8 text-primary relative z-10" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <article className="text-center relative group">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 relative overflow-hidden group-hover:scale-110 transition-transform">
+                  <Target className="w-6 h-6 text-primary relative z-10" />
                   <div className="absolute inset-0 opacity-20">
                     <ProductShowcase className="w-full h-full" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">SEO Optimized</h3>
-                <p className="text-muted-foreground">
-                  Every title, description, and feature list is crafted to rank higher in search results and drive organic traffic.
+                <h3 className="text-lg font-semibold mb-2">SEO Ready</h3>
+                <p className="text-sm text-muted-foreground">
+                  Optimized for search rankings
                 </p>
               </article>
               
-              <article className="text-center relative">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 relative overflow-hidden">
-                  <Zap className="w-8 h-8 text-primary relative z-10" />
+              <article className="text-center relative group">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 relative overflow-hidden group-hover:scale-110 transition-transform">
+                  <Zap className="w-6 h-6 text-primary relative z-10" />
                   <FloatingObjects className="absolute inset-0 opacity-30" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Lightning Fast</h3>
-                <p className="text-muted-foreground">
-                  Generate professional product content in seconds, not hours. Perfect for busy e-commerce teams and students.
+                <h3 className="text-lg font-semibold mb-2">Instant Results</h3>
+                <p className="text-sm text-muted-foreground">
+                  Generate content in seconds
                 </p>
               </article>
               
-              <article className="text-center relative">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 relative overflow-hidden">
-                  <TrendingUp className="w-8 h-8 text-primary relative z-10" />
+              <article className="text-center relative group">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 relative overflow-hidden group-hover:scale-110 transition-transform">
+                  <TrendingUp className="w-6 h-6 text-primary relative z-10" />
                   <ParticleField className="absolute inset-0 opacity-40" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Conversion Focused</h3>
-                <p className="text-muted-foreground">
-                  Content designed to turn browsers into buyers with compelling copy that highlights benefits over features.
+                <h3 className="text-lg font-semibold mb-2">High Converting</h3>
+                <p className="text-sm text-muted-foreground">
+                  Built to drive sales
                 </p>
               </article>
             </div>
