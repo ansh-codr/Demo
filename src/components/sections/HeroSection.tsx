@@ -70,25 +70,30 @@ export const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
-                onClick={handleStartGenerating}
+                onClick={() => navigate('/demo')}
                 size="lg" 
                 className="group bg-gradient-primary hover:shadow-neon transition-all duration-500 text-lg px-8 py-4 rounded-xl"
               >
-                {user ? 'Start Generating' : 'Get Started'}
+                Try Free Demo
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
-              {!user && (
-                <Button 
-                  onClick={() => navigate('/auth')}
-                  variant="outline" 
-                  size="lg"
-                  className="group glass-panel border-primary/30 hover:border-primary/50 text-lg px-8 py-4 rounded-xl"
-                >
-                  <LogIn className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Sign In
-                </Button>
-              )}
+              <Button 
+                onClick={() => navigate(user ? '/generate' : '/auth')}
+                variant="outline" 
+                size="lg"
+                className="group glass-panel border-primary/30 hover:border-primary/50 text-lg px-8 py-4 rounded-xl"
+              >
+                <LogIn className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                {user ? 'Full Generator' : 'Sign Up Free'}
+              </Button>
+            </div>
+
+            {/* Demo Benefits */}
+            <div className="pt-4">
+              <p className="text-sm text-white/70 text-center lg:text-left">
+                🚀 Try 3 generations free • No signup required • Instant results
+              </p>
             </div>
 
             {/* Stats */}
