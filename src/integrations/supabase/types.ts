@@ -14,7 +14,120 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      products: {
+        Row: {
+          category: Database["public"]["Enums"]["product_category"]
+          created_at: string
+          generated_description: string | null
+          generated_features: string[] | null
+          generated_title: string | null
+          id: string
+          image_analysis: string | null
+          image_url: string | null
+          keywords: string[] | null
+          product_name: string
+          specifications: Json | null
+          target_audience: string | null
+          tone_of_voice: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          category?: Database["public"]["Enums"]["product_category"]
+          created_at?: string
+          generated_description?: string | null
+          generated_features?: string[] | null
+          generated_title?: string | null
+          id?: string
+          image_analysis?: string | null
+          image_url?: string | null
+          keywords?: string[] | null
+          product_name: string
+          specifications?: Json | null
+          target_audience?: string | null
+          tone_of_voice?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["product_category"]
+          created_at?: string
+          generated_description?: string | null
+          generated_features?: string[] | null
+          generated_title?: string | null
+          id?: string
+          image_analysis?: string | null
+          image_url?: string | null
+          keywords?: string[] | null
+          product_name?: string
+          specifications?: Json | null
+          target_audience?: string | null
+          tone_of_voice?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          api_calls_used: number
+          created_at: string
+          email: string
+          id: string
+          role: Database["public"]["Enums"]["user_role"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          api_calls_used?: number
+          created_at?: string
+          email: string
+          id?: string
+          role?: Database["public"]["Enums"]["user_role"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          api_calls_used?: number
+          created_at?: string
+          email?: string
+          id?: string
+          role?: Database["public"]["Enums"]["user_role"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      prompt_configurations: {
+        Row: {
+          category: Database["public"]["Enums"]["product_category"]
+          created_at: string
+          description_prompt: string
+          features_prompt: string
+          id: string
+          title_prompt: string
+          updated_at: string
+        }
+        Insert: {
+          category: Database["public"]["Enums"]["product_category"]
+          created_at?: string
+          description_prompt: string
+          features_prompt: string
+          id?: string
+          title_prompt: string
+          updated_at?: string
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["product_category"]
+          created_at?: string
+          description_prompt?: string
+          features_prompt?: string
+          id?: string
+          title_prompt?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +136,18 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      product_category:
+        | "electronics"
+        | "clothing"
+        | "home"
+        | "sports"
+        | "books"
+        | "beauty"
+        | "automotive"
+        | "toys"
+        | "health"
+        | "other"
+      user_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +274,20 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      product_category: [
+        "electronics",
+        "clothing",
+        "home",
+        "sports",
+        "books",
+        "beauty",
+        "automotive",
+        "toys",
+        "health",
+        "other",
+      ],
+      user_role: ["admin", "user"],
+    },
   },
 } as const
