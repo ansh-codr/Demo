@@ -6,6 +6,9 @@ import GeneratedContent from '@/components/GeneratedContent';
 import { ContentGenerator } from '@/utils/contentGenerator';
 import { Sparkles, Zap, Target, TrendingUp } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
+import { FloatingObjects } from '@/components/3d/FloatingObjects';
+import { ParticleField } from '@/components/3d/ParticleField';
+import { ProductShowcase } from '@/components/3d/ProductShowcase';
 
 interface ProductData {
   product_id: string;
@@ -53,6 +56,10 @@ const Index = () => {
       <div className="min-h-screen">
         {/* Hero Section */}
         <header className="relative overflow-hidden">
+          {/* 3D Background Elements */}
+          <ParticleField className="absolute inset-0 opacity-30" />
+          <FloatingObjects className="absolute inset-0 opacity-60" />
+          
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
             style={{ backgroundImage: `url(${heroImage})` }}
@@ -142,9 +149,12 @@ const Index = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <article className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-8 h-8 text-primary" />
+              <article className="text-center relative">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 relative overflow-hidden">
+                  <Target className="w-8 h-8 text-primary relative z-10" />
+                  <div className="absolute inset-0 opacity-20">
+                    <ProductShowcase className="w-full h-full" />
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-3">SEO Optimized</h3>
                 <p className="text-muted-foreground">
@@ -152,9 +162,10 @@ const Index = () => {
                 </p>
               </article>
               
-              <article className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-primary" />
+              <article className="text-center relative">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 relative overflow-hidden">
+                  <Zap className="w-8 h-8 text-primary relative z-10" />
+                  <FloatingObjects className="absolute inset-0 opacity-30" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Lightning Fast</h3>
                 <p className="text-muted-foreground">
@@ -162,9 +173,10 @@ const Index = () => {
                 </p>
               </article>
               
-              <article className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-8 h-8 text-primary" />
+              <article className="text-center relative">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 relative overflow-hidden">
+                  <TrendingUp className="w-8 h-8 text-primary relative z-10" />
+                  <ParticleField className="absolute inset-0 opacity-40" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Conversion Focused</h3>
                 <p className="text-muted-foreground">
